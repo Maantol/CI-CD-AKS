@@ -10,5 +10,8 @@ terraform {
     }
   }
   cloud {
+    workspaces {
+      name = "CI-CD-AKS"
+    }
   }
 }
