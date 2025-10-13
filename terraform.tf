@@ -8,10 +8,23 @@ terraform {
       source  = "hashicorp/random"
       version = "3.7.2"
     }
+
   }
   cloud {
+    hostname     = "app.eu.terraform.io"
+    organization = "maantol"
     workspaces {
       name = "CI-CD-AKS"
     }
   }
 }
+
+provider "azurerm" {
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
+}
+
+provider "random" {}
