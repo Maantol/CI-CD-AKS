@@ -4,6 +4,8 @@ provider "azurerm" {
       prevent_deletion_if_contains_resources = false
     }
   }
+  use_cli  = false
+  use_oidc = true
 }
 
 provider "random" {}
