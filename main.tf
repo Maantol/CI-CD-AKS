@@ -8,6 +8,8 @@ provider "azurerm" {
   use_oidc = true
 }
 
+provider "azuread" {}
+
 provider "random" {}
 
 resource "random_pet" "rg_name" {
