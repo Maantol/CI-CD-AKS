@@ -8,6 +8,7 @@ terraform {
       source  = "aztfmod/azurecaf"
       version = "2.0.0-preview3"
     }
+    
   }
   cloud {
     hostname     = "app.eu.terraform.io"
