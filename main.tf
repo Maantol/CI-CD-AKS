@@ -5,6 +5,7 @@ resource "azurecaf_name" "resource_group" {
 }
 
 resource "azurerm_resource_group" "webapp" {
-  name     = azurecaf_name.resource_group.result
-  location = var.azure_location
+  name       = azurecaf_name.resource_group.result
+  location   = var.azure_location
+  depends_on = [azurecaf_name.resource_group]
 }
