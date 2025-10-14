@@ -4,7 +4,7 @@ output "resource_group" {
 }
 
 output "kubernetes_cluster_name" {
-    value = azurerm_kubernetes_cluster.k8s.name
+  value = azurerm_kubernetes_cluster.k8s.name
 }
 
 output "client_key" {
@@ -13,8 +13,8 @@ output "client_key" {
 }
 
 output "client_certificate" {
-  value = azurerm_kubernetes_cluster.k8s.kube_config[0].client_certificate
-  sensitive = true 
+  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].client_certificate
+  sensitive = true
 }
 
 output "cluster_ca_certificate" {
@@ -38,6 +38,6 @@ output "host" {
 }
 
 output "kube_config" {
-  value = azurerm_kubernetes_cluster.k8s.kube_config_raw
+  value     = azurerm_kubernetes_cluster.k8s.kube_config_raw
   sensitive = true
 }
