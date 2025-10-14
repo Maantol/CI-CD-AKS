@@ -1,10 +1,7 @@
 resource "azurecaf_name" "resource_group" {
-  name          = "demogroup"
+  name          = "webapp"
   resource_type = "azurerm_resource_group"
-  prefixes      = ["a", "b"]
-  suffixes      = ["y", "z"]
-  random_length = 5
-  clean_input   = true
+  suffixes = ["${var.azure_location}"]
 }
 
 resource "azurerm_resource_group" "example" {
