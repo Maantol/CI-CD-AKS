@@ -1,7 +1,7 @@
 resource "azurecaf_name" "resource_group" {
   name          = "webapp"
   resource_type = "azurerm_resource_group"
-  suffixes = ["${var.azure_location}"]
+  suffixes = ["dev"]
 }
 
 resource "azurerm_resource_group" "example" {
