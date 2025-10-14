@@ -26,4 +26,6 @@ provider "azurerm" {
   }
 }
 
+provider "azurecaf" {}
+
 provider "random" {}
