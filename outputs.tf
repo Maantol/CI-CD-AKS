@@ -1,4 +1,4 @@
-output "subnet" {
-  description = "Address prefixes for subnet"
-  value       = azurerm_subnet.example.address_prefixes
-}
+output "resource_group" {
+    description = "The name of the resource group"
+    value       = azurerm_resource_group.example.name
+    }

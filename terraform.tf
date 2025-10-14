@@ -4,11 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "4.47.0"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "3.7.2"
+    azurecaf = {
+      source  = "aztfmod/azurecaf"
+      version = "2.0.0-preview3"
     }
-
   }
   cloud {
     hostname     = "app.eu.terraform.io"
