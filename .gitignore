@@ -12,3 +12,4 @@ crash.log
 .DS_Store
 azure.tfvars
 secrets.tfvars
+azurek8s

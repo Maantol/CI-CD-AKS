@@ -40,3 +40,8 @@ output "kube_config" {
   value     = azurerm_kubernetes_cluster.k8s.kube_config_raw
   sensitive = true
 }
+
+output "tls_private_key" {
+  value     = tls_private_key.ssh-key.private_key_pem
+  sensitive = true
+}
