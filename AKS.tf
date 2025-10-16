@@ -15,6 +15,7 @@ resource "azurerm_ssh_public_key" "ssh" {
   resource_group_name = azurecaf_name.resource_group.result
   location            = var.azure_location
   public_key          = tls_private_key.ssh-key.public_key_openssh
+  depends_on          = [azurerm_resource_group.webapp]
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {

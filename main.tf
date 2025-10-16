@@ -21,4 +21,5 @@ resource "tfe_variable" "aks_public_key" {
   category     = "terraform"
   workspace_id = data.tfe_workspace.tfe-workspace.id
   sensitive    = false
+  depends_on   = [azurerm_ssh_public_key.ssh]
 }

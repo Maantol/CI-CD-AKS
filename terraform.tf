@@ -39,6 +39,6 @@ provider "azurecaf" {}
 provider "random" {}
 
 provider "tfe" {
-    hostname = "app.eu.terraform.io"
-    organization = var.hcp_terraform_organization
+  hostname     = "app.eu.terraform.io"
+  organization = var.hcp_terraform_organization
 }

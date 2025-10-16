@@ -18,13 +18,13 @@ variable "network_address_space" {
 variable "hcp_terraform_organization" {
   type        = string
   description = "HCP Terraform organization name"
-  default = "maantol"
+  default     = "maantol"
 }
 
 variable "hcp_terraform_project" {
   type        = string
   description = "HCP Terraform project name"
-  default = "matti-CI-CD-AKS"
+  default     = "matti-CI-CD-AKS"
 }
 
 variable "hcp_terraform_workspace" {
