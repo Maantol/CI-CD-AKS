@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     vm_size    = "Standard_D2s_v6"
   }
   linux_profile {
-    admin_username = "admin"
+    admin_username = "testuser"
     ssh_key {
       key_data = tls_private_key.ssh-key.public_key_openssh
     }
