@@ -1,10 +1,3 @@
-data "azurerm_kubernetes_cluster" "k8s" {
-  name                = azurecaf_name.AKS
-  resource_group_name = azurerm_kubernetes_cluster.k8s
-  depends_on          = [azurerm_kubernetes_cluster.k8s]
-}
-
-
 resource "azurecaf_name" "AKS" {
   name          = var.base_name
   resource_type = "azurerm_kubernetes_cluster"

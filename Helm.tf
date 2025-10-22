@@ -7,6 +7,11 @@ provider "helm" {
   }
 }
 
+data "azurerm_kubernetes_cluster" "k8s" {
+  name                = azurecaf_name.AKS
+  resource_group_name = azurerm_kubernetes_cluster.k8s
+}
+
 resource "helm_release" "nginx_ingress" {
   name       = "nginx-ingress-controller"
   repository = "https://charts.bitnami.com/bitnami"

@@ -1,8 +1,3 @@
-data "tfe_workspace" "tfe-workspace" {
-  name         = "CI-CD-AKS"
-  organization = "maantol"
-}
-
 resource "azurecaf_name" "resource_group" {
   name          = var.base_name
   resource_type = "azurerm_resource_group"
