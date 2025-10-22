@@ -10,13 +10,13 @@ provider "helm" {
 data "azurerm_kubernetes_cluster" "k8s" {
   name                = azurecaf_name.AKS.result
   resource_group_name = azurecaf_name.resource_group.result
-  depends_on = [ azurerm_kubernetes_cluster.k8s ]
+  depends_on          = [azurerm_kubernetes_cluster.k8s]
 }
 
 resource "helm_release" "nginx_ingress" {
-  name             = "nginx-ingress"
-  repository       = "https://helm.nginx.com/stable"
-  chart            = "nginx-ingress"
+  name       = "nginx-ingress"
+  repository = "https://helm.nginx.com/stable"
+  chart      = "nginx-ingress"
 
   set = [
     {
