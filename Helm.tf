@@ -14,14 +14,15 @@ data "azurerm_kubernetes_cluster" "k8s" {
 }
 
 resource "helm_release" "nginx_ingress" {
-  name       = "nginx-ingress-controller"
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "nginx-ingress-controller"
+  name             = "nginx_ingress"
+  repository       = "https://helm.nginx.com/stable"
+  chart            = "nginx-ingress"
 
   set = [
     {
-      name  = "service.type"
+      name  = "controller.service.type"
       value = "ClusterIP"
     }
   ]
+  depends_on = [data.azurerm_kubernetes_cluster.k8s]
 }
