@@ -8,13 +8,9 @@ terraform {
       source  = "aztfmod/azurecaf"
       version = "2.0.0-preview3"
     }
-    tfe = {
-      source  = "hashicorp/tfe"
-      version = "0.70.0"
-    }
-    tls = {
-      source  = "hashicorp/tls"
-      version = "4.1.0"
+    helm = {
+      source  = "hashicorp/helm"
+      version = "3.0.2"
     }
   }
   cloud {
@@ -37,8 +33,3 @@ provider "azurerm" {
 provider "azurecaf" {}
 
 provider "random" {}
-
-provider "tfe" {
-  hostname     = "app.eu.terraform.io"
-  organization = var.hcp_terraform_organization
-}
