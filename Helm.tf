@@ -12,17 +12,3 @@ data "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = azurecaf_name.resource_group.result
   depends_on          = [azurerm_kubernetes_cluster.k8s]
 }
-
-resource "helm_release" "azure-vote" {
-  name       = "azure-vote"
-  repository = "https://azure-samples.github.io/helm-charts/"
-  chart      = "azure-vote"
-
-  values = [
-    file("${path.module}/values/values.yaml")
-  ]
-
-  depends_on = [azurerm_kubernetes_cluster.k8s]
-
-
-}
