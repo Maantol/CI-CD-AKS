@@ -8,8 +8,9 @@ provider "helm" {
 }
 
 data "azurerm_kubernetes_cluster" "k8s" {
-  name                = azurecaf_name.AKS
-  resource_group_name = azurerm_kubernetes_cluster.k8s
+  name                = azurecaf_name.AKS.result
+  resource_group_name = azurecaf_name.resource_group.result
+  depends_on = [ azurerm_kubernetes_cluster.k8s ]
 }
 
 resource "helm_release" "nginx_ingress" {
