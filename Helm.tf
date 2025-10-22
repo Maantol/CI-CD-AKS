@@ -13,9 +13,8 @@ data "azurerm_kubernetes_cluster" "k8s" {
   depends_on          = [azurerm_kubernetes_cluster.k8s]
 }
 
-resource "helm_release" "prometheus" {
-  name       = "my-prometheus"
-  repository = "https://prometheus-community.github.io/helm-charts"
-  chart      = "prometheus"
-  version    = "15.0.0"
+resource "helm_release" "azure-vote" {
+  name       = "azure-vote"
+  repository = "https://azure-samples.github.io/helm-charts/"
+  chart      = "azure-samples/azure-vote-osba"
 }
