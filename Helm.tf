@@ -13,16 +13,9 @@ data "azurerm_kubernetes_cluster" "k8s" {
   depends_on          = [azurerm_kubernetes_cluster.k8s]
 }
 
-resource "helm_release" "nginx_ingress" {
-  name       = "nginx-ingress"
-  repository = "https://helm.nginx.com/stable"
-  chart      = "nginx-ingress"
-
-  set = [
-    {
-      name  = "controller.service.type"
-      value = "ClusterIP"
-    }
-  ]
-  depends_on = [data.azurerm_kubernetes_cluster.k8s]
+resource "helm_release" "prometheus" {
+  name       = "my-prometheus"
+  repository = "https://prometheus-community.github.io/helm-charts"
+  chart      = "prometheus"
+  version    = "15.0.0"
 }
