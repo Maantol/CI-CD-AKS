@@ -16,5 +16,6 @@ data "azurerm_kubernetes_cluster" "k8s" {
 resource "helm_release" "azure-vote" {
   name       = "azure-vote"
   repository = "https://azure-samples.github.io/helm-charts/"
-  chart      = "azure-samples/azure-vote-osba"
+  chart      = "azure-vote-osba"
+  depends_on = [azurerm_kubernetes_cluster.k8s]
 }
