@@ -12,3 +12,17 @@ data "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = azurecaf_name.resource_group.result
   depends_on          = [azurerm_kubernetes_cluster.k8s]
 }
+
+resource "helm_release" "argocd" {
+  name       = "argo-cd"
+  repository = "https://argoproj.github.io/argo-helm"
+  chart      = "argo-cd"
+  version    = "9.0.4"
+
+  set = [
+    {
+      name  = "server.service.type"
+      value = "LoadBalancer"
+    }
+  ]
+}
